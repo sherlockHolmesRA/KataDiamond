@@ -4,13 +4,13 @@ import java.util.stream.IntStream;
 
 import static java.util.stream.IntStream.rangeClosed;
 
-public class Letter {
+public class LetterChoice {
 
 	static final int CODE_A = "A".codePointAt(0);
     private final String letter;
     private int matchingFirstCode;
 
-    Letter(String letter) {
+    LetterChoice(String letter) {
         this.letter = letter;
         validate();
         matchingFirstCode = CODE_A;

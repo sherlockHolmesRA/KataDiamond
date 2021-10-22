@@ -14,10 +14,10 @@ public class Diamond {
 	
 	private static final String LINE_SEPARATOR = "\n";
     private static final String ONE_SPACE = " ";
-    private final Letter givenLetter;
+    private final LetterChoice givenLetter;
 
     private Diamond(String letter) {
-        givenLetter = new Letter(letter);
+        givenLetter = new LetterChoice(letter);
     }
 
     public static String draw(String letter) {
@@ -59,7 +59,7 @@ public class Diamond {
         }
 
         private boolean isA() {
-            return code == Letter.CODE_A;
+            return code == LetterChoice.CODE_A;
         }
 
         private String indentation() {
