@@ -9,8 +9,6 @@ import static testasyouthink.TestAsYouThink.when;
 
 class KatadiamondApplicationTests {
 
-    @Nested
-    class Valid_Letter {
     @Test
     void print_the_diamond() {
         when(() -> KatadiamondApplication.main(new String[]{"C"})).thenStandardOutput(
@@ -22,7 +20,7 @@ class KatadiamondApplicationTests {
                         + " B B\n" //
                         + "  A"));
     }
-    }
+
 
     @Nested
     class Invalid_Letter {
