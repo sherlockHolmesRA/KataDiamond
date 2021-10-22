@@ -22,10 +22,10 @@ public class Diamond {
 
     public static String draw(String letter) {
         Diamond diamond = new Diamond(letter);
-        return diamond.crystallize();
+        return diamond.constructDiamond();
     }
 
-    private String crystallize() {
+    private String constructDiamond() {
         List<String> topHalf = givenLetter
                 .streamOfCodes()
                 .mapToObj(Line::new)
