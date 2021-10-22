@@ -63,11 +63,11 @@ public class Diamond {
         }
 
         private String indentation() {
-            return repeatSpace(givenLetter.getCode() - code);
+            return repeatSpace(givenLetter.getLetterCode() - code);
         }
 
         private String spacing() {
-            return repeatSpace(2 * (code - givenLetter.getMatchingFirstCode() - 1) + 1);
+            return repeatSpace(2 * (code - givenLetter.getCodeA() - 1) + 1);
         }
 
         private String repeatSpace(Integer times) {

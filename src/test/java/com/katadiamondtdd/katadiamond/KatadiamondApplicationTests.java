@@ -28,13 +28,13 @@ class KatadiamondApplicationTests {
     class Given_an_invalid_letter {
 
         @Test
-        void print_an_error_message_given_nil() {
+        void error_message_given_null() {
             when(() -> KatadiamondApplication.main(null)).thenStandardOutput(
                     stdout -> assertThat(stdout).hasContent("Letter missing!"));
         }
 
         @Test
-        void print_an_error_message_given_several_letters() {
+        void error_message_if_several_letters() {
             when(() -> KatadiamondApplication.main(new String[]{"A", "B"})).thenStandardOutput(
                     stdout -> assertThat(stdout).hasContent("Only one letter is expected!"));
         }

@@ -8,12 +8,12 @@ public class LetterChoice {
 
 	static final int CODE_A = "A".codePointAt(0);
     private final String letter;
-    private int matchingFirstCode;
+    private int codeA;
 
     LetterChoice(String letter) {
         this.letter = letter;
         validate();
-        matchingFirstCode = CODE_A;
+        codeA = CODE_A;
     }
 
     private void validate() {
@@ -21,14 +21,14 @@ public class LetterChoice {
             throw new IllegalArgumentException("Letter missing!");
         } else if (letter.isEmpty()) {
             throw new IllegalArgumentException("A letter is expected!");
-        } else if (otherThanLetters()) {
+        } else if (notLetters()) {
             throw new IllegalArgumentException("Only letters are expected!");
         } else if (moreThanOneLetter()) {
             throw new IllegalArgumentException("Only one letter is expected!");
         }
     }
 
-    private boolean otherThanLetters() {
+    private boolean notLetters() {
         return !letter.matches("^[A-Za-z]*$");
     }
 
@@ -37,14 +37,14 @@ public class LetterChoice {
     }
 
     IntStream streamOfCodes() {
-        return rangeClosed(matchingFirstCode, getCode());
+        return rangeClosed(codeA, getLetterCode());
     }
 
-    int getMatchingFirstCode() {
-        return matchingFirstCode;
+    int getCodeA() {
+        return codeA;
     }
 
-    int getCode() {
+    int getLetterCode() {
         return letter.codePointAt(0);
     }
 
