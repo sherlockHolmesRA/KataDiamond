@@ -8,10 +8,10 @@ import static testasyouthink.TestAsYouThink.whenOutsideOperatingConditions;
 
 
 class DiamondTest {
-
+/*
     @Nested
     class Valid_Letter {
-
+*/
             @Test
             void create_a_diamond_if_A() {
             	resultOf(() -> Diamond.draw("A")).isEqualTo("A");
@@ -33,11 +33,11 @@ class DiamondTest {
                         + "  A");
             }
 
-        }
-
+     //   }
+/*
     @Nested
     class Invalid_Letter {
-
+*/
         @Test
         void fail_to_create_a_diamond_if_null() {
             whenOutsideOperatingConditions(() -> Diamond.draw(null))
@@ -70,4 +70,4 @@ class DiamondTest {
                     .withMessage("Only one letter is expected!");
         }
     }
-}
+//}

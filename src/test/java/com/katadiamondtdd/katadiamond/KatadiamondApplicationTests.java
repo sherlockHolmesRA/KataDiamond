@@ -21,21 +21,4 @@ class KatadiamondApplicationTests {
                         + "  A"));
     }
 
-
-    @Nested
-    class Invalid_Letter {
-
-        @Test
-        void error_message_if_null() {
-            when(() -> KatadiamondApplication.main(null)).thenStandardOutput(
-                    stdout -> assertThat(stdout).hasContent("Letter missing!"));
-        }
-
-        @Test
-        void error_message_if_several_letters() {
-            when(() -> KatadiamondApplication.main(new String[]{"A", "B"})).thenStandardOutput(
-                    stdout -> assertThat(stdout).hasContent("Only one letter is expected!"));
-        }
-    }
-
 }
