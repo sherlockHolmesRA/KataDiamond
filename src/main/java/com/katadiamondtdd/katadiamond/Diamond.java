@@ -26,19 +26,19 @@ public class Diamond {
     }
 
     private String constructDiamond() {
-        List<String> topHalf = givenLetter
+        List<String> upSide = givenLetter
                 .streamOfCodes()
                 .mapToObj(BuildLine::new)
                 .map(BuildLine::build)
                 .collect(toList());
-        List<String> downHalf = new ArrayList<>(topHalf.subList(0, topHalf.size() - 1));
-        reverse(downHalf);
-        return assembly(topHalf, downHalf);
+        List<String> downSide = new ArrayList<>(upSide.subList(0, upSide.size() - 1));
+        reverse(downSide);
+        return combine(upSide, downSide);
     }
 
-    private String assembly(List<String> topHalf, List<String> downHalf) {
+    private String combine(List<String> upSide, List<String> downSide) {
         return Stream
-                .of(topHalf, downHalf)
+                .of(upSide, downSide)
                 .flatMap(List::stream)
                 .collect(joining(LINE_SEPARATOR));
     }

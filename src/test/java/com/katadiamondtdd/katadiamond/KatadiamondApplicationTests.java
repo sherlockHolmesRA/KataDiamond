@@ -10,9 +10,9 @@ import static testasyouthink.TestAsYouThink.when;
 class KatadiamondApplicationTests {
 
     @Nested
-    class Given_a_valid_letter {
+    class Valid_Letter {
     @Test
-    void print_a_diamond_in_the_console() {
+    void print_the_diamond() {
         when(() -> KatadiamondApplication.main(new String[]{"C"})).thenStandardOutput(
                 stdout -> assertThat(stdout).hasContent(
                 		  
@@ -25,10 +25,10 @@ class KatadiamondApplicationTests {
     }
 
     @Nested
-    class Given_an_invalid_letter {
+    class Invalid_Letter {
 
         @Test
-        void error_message_given_null() {
+        void error_message_if_null() {
             when(() -> KatadiamondApplication.main(null)).thenStandardOutput(
                     stdout -> assertThat(stdout).hasContent("Letter missing!"));
         }

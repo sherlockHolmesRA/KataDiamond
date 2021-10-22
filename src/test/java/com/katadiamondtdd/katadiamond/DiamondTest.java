@@ -2,30 +2,31 @@ package com.katadiamondtdd.katadiamond;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static testasyouthink.TestAsYouThink.resultOf;
+import testasyouthink.TestAsYouThink;
+
 import static testasyouthink.TestAsYouThink.whenOutsideOperatingConditions;
 
 
 class DiamondTest {
 
     @Nested
-    class Given_a_valid_letter {
+    class Valid_Letter {
 
             @Test
-            void create_a_diamond_splinter_given_A() {
-                resultOf(() -> Diamond.draw("A")).isEqualTo("A");
+            void create_a_diamond_if_A() {
+            	TestAsYouThink.resultOf(() -> Diamond.draw("A")).isEqualTo("A");
             }
 
             @Test
-            void create_a_diamond_given_B() {
-                resultOf(() -> Diamond.draw("B")).isEqualTo(" A\n" //
+            void create_a_diamond_if_B() {
+                TestAsYouThink.resultOf(() -> Diamond.draw("B")).isEqualTo(" A\n" //
                         + "B B\n" //
                         + " A");
             }
 
             @Test
-            void create_a_diamond_given_C() {
-                resultOf(() -> Diamond.draw("C")).isEqualTo("  A\n" //
+            void create_a_diamond_if_C() {
+            	TestAsYouThink.resultOf(() -> Diamond.draw("C")).isEqualTo("  A\n" //
                         + " B B\n" //
                         + "C   C\n" //
                         + " B B\n" //
@@ -35,10 +36,10 @@ class DiamondTest {
         }
 
     @Nested
-    class Given_an_invalid_letter {
+    class Invalid_Letter {
 
         @Test
-        void fail_to_create_a_diamond_given_null() {
+        void fail_to_create_a_diamond_if_null() {
             whenOutsideOperatingConditions(() -> Diamond.draw(null))
                     .thenItFails()
                     .becauseOf(IllegalArgumentException.class)
@@ -46,7 +47,7 @@ class DiamondTest {
         }
 
         @Test
-        void fail_to_create_a_diamond_given_no_letter() {
+        void fail_to_create_a_diamond_if_no_letter() {
             whenOutsideOperatingConditions(() -> Diamond.draw(""))
                     .thenItFails()
                     .becauseOf(IllegalArgumentException.class)
@@ -54,15 +55,15 @@ class DiamondTest {
         }
 
         @Test
-        void fail_to_create_a_diamond_given_anything_but_a_letter() {
-            whenOutsideOperatingConditions(() -> Diamond.draw("1"))
+        void fail_to_create_a_diamond_if_anything_but_a_letter() {
+            whenOutsideOperatingConditions(() -> Diamond.draw("5"))
                     .thenItFails()
                     .becauseOf(IllegalArgumentException.class)
                     .withMessage("Only letters are expected!");
         }
 
         @Test
-        void fail_to_create_a_diamond_given_several_letters() {
+        void fail_to_create_a_diamond_if_several_letters() {
             whenOutsideOperatingConditions(() -> Diamond.draw("AB"))
                     .thenItFails()
                     .becauseOf(IllegalArgumentException.class)
