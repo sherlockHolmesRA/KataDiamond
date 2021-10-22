@@ -28,8 +28,8 @@ public class Diamond {
     private String constructDiamond() {
         List<String> topHalf = givenLetter
                 .streamOfCodes()
-                .mapToObj(Line::new)
-                .map(Line::build)
+                .mapToObj(BuildLine::new)
+                .map(BuildLine::build)
                 .collect(toList());
         List<String> downHalf = new ArrayList<>(topHalf.subList(0, topHalf.size() - 1));
         reverse(downHalf);
@@ -45,11 +45,11 @@ public class Diamond {
     
     
     
-    private class Line {
+    private class BuildLine {
 
         private final Integer code;
 
-        private Line(Integer code) {
+        private BuildLine(Integer code) {
             this.code = code;
         }
 
