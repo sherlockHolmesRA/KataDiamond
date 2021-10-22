@@ -38,7 +38,7 @@ class DiamondTest {
     class Given_an_invalid_letter {
 
         @Test
-        void should_fail_to_create_a_diamond_given_nil() {
+        void should_fail_to_create_a_diamond_given_null() {
             whenOutsideOperatingConditions(() -> Diamond.draw(null))
                     .thenItFails()
                     .becauseOf(IllegalArgumentException.class)
