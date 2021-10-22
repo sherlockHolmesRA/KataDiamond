@@ -2,8 +2,8 @@ package com.katadiamondtdd.katadiamond;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import testasyouthink.TestAsYouThink;
 
+import static testasyouthink.TestAsYouThink.resultOf;
 import static testasyouthink.TestAsYouThink.whenOutsideOperatingConditions;
 
 
@@ -14,19 +14,19 @@ class DiamondTest {
 
             @Test
             void create_a_diamond_if_A() {
-            	TestAsYouThink.resultOf(() -> Diamond.draw("A")).isEqualTo("A");
+            	resultOf(() -> Diamond.draw("A")).isEqualTo("A");
             }
 
             @Test
             void create_a_diamond_if_B() {
-                TestAsYouThink.resultOf(() -> Diamond.draw("B")).isEqualTo(" A\n" //
+                resultOf(() -> Diamond.draw("B")).isEqualTo(" A\n" //
                         + "B B\n" //
                         + " A");
             }
 
             @Test
             void create_a_diamond_if_C() {
-            	TestAsYouThink.resultOf(() -> Diamond.draw("C")).isEqualTo("  A\n" //
+            	resultOf(() -> Diamond.draw("C")).isEqualTo("  A\n" //
                         + " B B\n" //
                         + "C   C\n" //
                         + " B B\n" //
