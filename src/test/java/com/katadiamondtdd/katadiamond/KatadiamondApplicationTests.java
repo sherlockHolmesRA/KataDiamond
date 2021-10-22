@@ -8,7 +8,7 @@ import static testasyouthink.TestAsYouThink.when;
 
 @SpringBootTest
 class KatadiamondApplicationTests {
-
+/*
     @Test
     void print_the_diamond() {
         when(() -> KatadiamondApplication.main(new String[]{"C"})).thenStandardOutput(
@@ -20,5 +20,5 @@ class KatadiamondApplicationTests {
                         + " B B\n" //
                         + "  A"));
     }
-
+*/
 }

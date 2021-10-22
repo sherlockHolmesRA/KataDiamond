@@ -1,5 +1,6 @@
 package com.katadiamondtdd.katadiamond;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,26 +11,29 @@ import static testasyouthink.TestAsYouThink.whenOutsideOperatingConditions;
 class DiamondTest {
 
 	@Test
-	void create_a_diamond_if_A() {
-    	resultOf(() -> Diamond.draw("A")).isEqualTo("A");
+	void drawDiamondA() {
+		Assertions.assertThat(Diamond.draw("A")).contains("A");
 	}
-
+	
 	@Test
-	void create_a_diamond_if_B() {
-    	resultOf(() -> Diamond.draw("B")).isEqualTo(" A\n" //
-                	+ "B B\n" //
-                	+ " A");
+	void drawDiamondB() {
+		Assertions.assertThat(Diamond.draw("B")).contains(" A\n" //
+            	+ "B B\n" //
+            	+ " A"
+);		
 	}
-
+	
 	@Test
-	void create_a_diamond_if_C() {
-    	resultOf(() -> Diamond.draw("C")).isEqualTo("  A\n" //
-                	+ " B B\n" //
-                	+ "C   C\n" //
-                	+ " B B\n" //
-                	+ "  A");
+	void drawDiamondC() {
+		Assertions.assertThat(Diamond.draw("C")).contains("  A\n" //
+            	+ " B B\n" //
+            	+ "C   C\n" //
+            	+ " B B\n" //
+            	+ "  A");
+		
 	}
-
+	
+	
 	@Test
 	void fail_to_create_a_diamond_if_null() {
     	whenOutsideOperatingConditions(() -> Diamond.draw(null))
@@ -61,4 +65,6 @@ class DiamondTest {
                     .becauseOf(IllegalArgumentException.class)
                     .withMessage("Only one letter is expected!");
 	}
+
+
 }

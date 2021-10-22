@@ -23,46 +23,43 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.21.0</version><!--$NO-MVN-MAN-VER$-->
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-                <groupId>org.assertj</groupId>
-                <artifactId>assertj-core</artifactId>
-                <version>3.21.0</version><!--$NO-MVN-MAN-VER$-->
-                <scope>test</scope>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.1</version><!--$NO-MVN-MAN-VER$-->
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.2.6</version><!--$NO-MVN-MAN-VER$-->
-    <scope>test</scope>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>5.8.1</version><!--$NO-MVN-MAN-VER$-->
+			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-api</artifactId>
-    <version>5.8.1</version><!--$NO-MVN-MAN-VER$-->
-    <scope>test</scope>
-		</dependency>
-
-		<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-params</artifactId>
-    <version>5.8.1</version><!--$NO-MVN-MAN-VER$-->
-    <scope>test</scope>
-		</dependency>
-
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
+		
+		<!-- https://mvnrepository.com/artifact/com.github.xapn/test-as-you-think-core -->
+		<dependency>
+			<groupId>com.github.xapn</groupId>
+			<artifactId>test-as-you-think-core</artifactId>
+			<version>0.8-m1</version>
+			<scope>test</scope>
+		</dependency>
+            
+            
 	</dependencies>
 
 	<build>
