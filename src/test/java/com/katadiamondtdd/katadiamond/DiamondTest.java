@@ -4,31 +4,30 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static testasyouthink.TestAsYouThink.resultOf;
 import static testasyouthink.TestAsYouThink.whenOutsideOperatingConditions;
 
 @SpringBootTest
 class DiamondTest {
 
 	@Test
-	void drawDiamondA() {
+	void draw_diamond_A() {
 		Assertions.assertThat(Diamond.draw("A")).contains("A");
 	}
 	
 	@Test
-	void drawDiamondB() {
-		Assertions.assertThat(Diamond.draw("B")).contains(" A\n" //
-            	+ "B B\n" //
+	void draw_diamond_B() {
+		Assertions.assertThat(Diamond.draw("B")).contains(" A\n" 
+            	+ "B B\n" 
             	+ " A"
 );		
 	}
 	
 	@Test
-	void drawDiamondC() {
-		Assertions.assertThat(Diamond.draw("C")).contains("  A\n" //
-            	+ " B B\n" //
-            	+ "C   C\n" //
-            	+ " B B\n" //
+	void draw_diamond_C() {
+		Assertions.assertThat(Diamond.draw("C")).contains("  A\n" 
+            	+ " B B\n" 
+            	+ "C   C\n" 
+            	+ " B B\n" 
             	+ "  A");
 		
 	}
