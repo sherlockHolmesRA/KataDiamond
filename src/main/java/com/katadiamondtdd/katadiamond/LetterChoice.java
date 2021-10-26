@@ -17,9 +17,7 @@ public class LetterChoice {
     }
 
     private void validate() {
-        if (letter == null) {
-            throw new IllegalArgumentException("Letter missing!");
-        } else if (letter.isEmpty()) {
+        if (letter.isEmpty()) {
             throw new IllegalArgumentException("A letter is expected!");
         } else if (notLetters()) {
             throw new IllegalArgumentException("Only letters are expected!");
