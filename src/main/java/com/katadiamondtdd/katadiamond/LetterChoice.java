@@ -27,7 +27,7 @@ public class LetterChoice {
     }
 
     private boolean notLetters() {
-        return !letter.matches("^[A-Za-z]*$");
+        return !letter.matches("^[A-Z]*$");
     }
 
     private boolean moreThanOneLetter() {
